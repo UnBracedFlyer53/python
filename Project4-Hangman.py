@@ -2,12 +2,12 @@ import random
 import time
 
 print("----this program is developed by aditya goyal----")
-time.sleep(3)
+#time.sleep(3)
 print("\nHangman is a guessing game for two or more players. One player thinks of a word, phrase or sentence and the other tries to user_guess it by suggesting letters within a certain number of guesses. ")
-time.sleep(5)
-print("\nIn this edition of hangman, the player will be dealing with bollywood movies. The player will be given 5 guesses.\n\n")
+#time.sleep(5)
+print("\nIn this edition of hangman, the player will be dealing with movies. The player will be given 5 guesses.\n\n")
 print("Starting the game in 3 seconds...\n\n")
-time.sleep(3)
+#time.sleep(3)
 
 def hollywood_hangman():
     guesslist = []
@@ -15,7 +15,7 @@ def hollywood_hangman():
     used_letters = []
     vowels = "aeiouAEIOU"
     word = ""
-    hollywood = ["Intersteller","The Prestige","Ironman","Avengers","Black Widow","Doctor Strange","Inception","Thor","Thor The Dark World","Captain America The First Avenger","Captain America Civil War", ]
+    hollywood=["The Prestige"]
     answer = random.choice(hollywood).upper()
     for i in answer:
         answer_list.append(i)
@@ -52,8 +52,8 @@ def hollywood_hangman():
                 if count > 1:
                     if answer_list.count(user_guess) > 1:
                         for m in range(count):
-                            b=answer_list.index(user_guess)
-                            c=answer_list.index(user_guess,b+m+1,len(answer_list))
+                            b=answer_list.index(user_guess,m,len(answer_list))
+                            c=answer_list.index(user_guess,b+m,len(answer_list))
                             guesslist[b]=guesslist[c]=answer_list[b]
                         for i in guesslist:
                             new_word+=i
@@ -111,8 +111,8 @@ def bollywood_hangman():
                 if count > 1:
                     if answer_list.count(user_guess) > 1:
                         for m in range(count):
-                            b=answer_list.index(user_guess)
-                            c=answer_list.index(user_guess,b+m+1,len(answer_list))
+                            b=answer_list.index(user_guess,m,len(answer_list))
+                            c=answer_list.index(user_guess,b+m,len(answer_list))
                             guesslist[b]=guesslist[c]=answer_list[b]
                         for i in guesslist:
                             new_word+=i
